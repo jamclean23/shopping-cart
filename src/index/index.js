@@ -17,8 +17,8 @@ import RouteSwitch from './React/RouteSwitch';
 
 function setCssWindowVars () {
     const doc = document.documentElement;
-    doc.style.setProperty('--doc-height', window.innerHeight);
-    doc.style.setProperty('--doc-width', window.innerWidth);
+    doc.style.setProperty('--doc-height', window.innerHeight + 'px');
+    doc.style.setProperty('--doc-width', window.innerWidth + 'px');
 }
 
 // Set initial variables
