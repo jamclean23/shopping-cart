@@ -8,7 +8,7 @@ function RouteSwitch (props) {
         <BrowserRouter>
             <Routes>
                 <Route path='/shopping-cart/' element={<Homepage />} />
-                <Route path='/shopping-cart/' element={<Cart />} />
+                <Route path='/shopping-cart/Cart' element={<Cart />} />
             </Routes>
         </BrowserRouter>
     );
