@@ -10,12 +10,15 @@ import css from './styles.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-// Main React App
-import { App } from './React/App.js';
+// Router
+import RouteSwitch from './React/RouteSwitch';
 
 
 // ====== RENDER ======
-
+console.log('Loaded index');
 const reactRoot = createRoot(document.querySelector('#root'));
 
-reactRoot.render(<App />);
+reactRoot.render(
+    <React.StrictMode>
+        <RouteSwitch />
+    </React.StrictMode>);
