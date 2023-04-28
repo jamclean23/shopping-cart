@@ -1,11 +1,19 @@
 import './homepage.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function Homepage (props) {
+    const mountCounter = useRef(0);
 
     useEffect(() => {
-        document.title = 'My Cool Shop!';
+        
+        if (mountCounter.current > 0) {
+
+            // Set Title
+            document.title = 'My Cool Shop!';
+        }
+
+        mountCounter.current = mountCounter.current + 1;
     }, []);
 
     return (
