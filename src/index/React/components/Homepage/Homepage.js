@@ -12,6 +12,7 @@ function Homepage (props) {
         <div className='Homepage'>
             <header>
                 <h1>Home</h1>
+                <button onClick={props.handleTestClick}>Test</button>
                 <Link to={'/shopping-cart/Cart'}>Cart</Link>
             </header>
         </div>

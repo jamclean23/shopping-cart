@@ -5,11 +5,19 @@ import Cart from "./components/Cart/Cart";
  
 function RouteSwitch (props) {
 
+    const [testInt, setTestInt] = useState(0);
+
+    function handleTestClick () {
+        console.log('clicked');
+        setTestInt(() => testInt + 1);
+        console.log(testInt);
+    }
+
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/shopping-cart/' element={<Homepage />} />
-                <Route path='/shopping-cart/Cart' element={<Cart />} />
+                <Route path='/shopping-cart/' element={<Homepage handleTestClick={handleTestClick}/>} />
+                <Route path='/shopping-cart/Cart' element={<Cart handleTestClick={handleTestClick}/>} />
             </Routes>
         </BrowserRouter>
     );
