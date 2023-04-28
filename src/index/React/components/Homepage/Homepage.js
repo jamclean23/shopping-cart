@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 function Homepage (props) {
 
     useEffect(() => {
-        document.title = 'Mock Store, Home';
+        document.title = 'My Cool Shop!';
     }, []);
 
     return (
         <div className='Homepage'>
             <header>
                 <h1>Home</h1>
-                <button onClick={props.handleTestClick}>Test</button>
-                <Link to={'/shopping-cart/Cart'}>Cart</Link>
+                <Link className='Link' to={'/shopping-cart/Cart'}>Cart</Link>
             </header>
+            <button onClick={props.handleTestClick}>Test</button>
         </div>
     );
 }

@@ -1,0 +1,17 @@
+header {
+    color: white;
+    background-color: #40a0c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: calc(var(--doc-height) * .08);
+}
+
+header > .Link {
+    position: absolute;
+    right: .5rem;
+    background-color: antiquewhite;
+    text-decoration: none;
+    padding: .25rem .5rem;
+}

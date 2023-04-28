@@ -15,6 +15,7 @@ import RouteSwitch from './React/RouteSwitch';
 
 // ====== WINDOW ======
 
+// CSS VARIABLES
 function setCssWindowVars () {
     const doc = document.documentElement;
     doc.style.setProperty('--doc-height', window.innerHeight + 'px');
@@ -26,6 +27,16 @@ setCssWindowVars();
 
 // Event Listener to set variables when window size changes
 window.addEventListener('resize', setCssWindowVars);
+
+// DETERMINE ENVIRONMENT
+function determineEnvironment () {
+    if (window.location.href === 'http://127.0.0.1:5500/dist/index.html') {
+        console.log('Local Test Environment');
+    } else if (window.location.href.split('https://')[1].split('/')[0] === 'jamclean23.github.io') {
+        console.log('Github Pages');
+    }
+}
+determineEnvironment();
 
 
 // ====== RENDER ======
