@@ -16,8 +16,8 @@ function RouteSwitch (props) {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/shopping-cart/' element={<Homepage handleTestClick={handleTestClick}/>} />
-                <Route path='/shopping-cart/Cart' element={<Cart handleTestClick={handleTestClick}/>} />
+                <Route path={props.prefix} element={<Homepage prefix={props.prefix} handleTestClick={handleTestClick}/>} />
+                <Route path={props.prefix + 'Cart'} element={<Cart prefix={props.prefix} handleTestClick={handleTestClick}/>} />
             </Routes>
         </BrowserRouter>
     );

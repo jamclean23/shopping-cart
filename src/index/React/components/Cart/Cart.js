@@ -12,7 +12,7 @@ function Cart (props) {
         <div className='Cart'>
             <header>
                 <h1>Cart</h1>
-                <Link className='Link' to={'../shopping-cart/'}>Home</Link>
+                <Link className='Link' to={'..' + props.prefix}>Home</Link>
             </header>
             <button onClick={props.handleTestClick}>Test</button>            
         </div>
