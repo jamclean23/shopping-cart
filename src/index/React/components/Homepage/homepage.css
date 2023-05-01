@@ -15,3 +15,10 @@ header > .Link {
     text-decoration: none;
     padding: .25rem .5rem;
 }
+
+.itemsContainer {
+    display: grid;
+    grid-auto-rows: 30vh;
+    grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+    justify-content: space-around;
+}

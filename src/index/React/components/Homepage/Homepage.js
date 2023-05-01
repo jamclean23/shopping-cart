@@ -1,10 +1,13 @@
 import './homepage.css';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import accesskey from '../../../accesskey.js';
+import Card from './Card/Card';
+import uniqid from 'uniqid';
 
 function Homepage (props) {
     const mountCounter = useRef(0);
+    const [cards, setCards] = useState('');
 
     useEffect(() => {
         
@@ -21,7 +24,17 @@ function Homepage (props) {
     }, []);
 
     async function generateCards () {
-        let printifyObject = await getPrintifyObject(accesskey);
+        // Get object with data concerning printify store
+        const printifyObject = await getPrintifyObject(accesskey);
+
+        // Make a new card for each item in printify object
+        let cardsArray = [];
+        printifyObject.data.forEach((item) => {
+            cardsArray.push(<Card key={uniqid()} mainImage={item.images[0].src}/>);
+        });
+
+        setCards(cardsArray);
+
         console.log(printifyObject);
     }
 
@@ -45,6 +58,7 @@ function Homepage (props) {
                 <Link className='Link' to={props.prefix + 'Cart'}>Cart</Link>
             </header>
             <button onClick={props.handleTestClick}>Test</button>
+            <div className='itemsContainer'>{cards}</div>
         </div>
     );
 }
