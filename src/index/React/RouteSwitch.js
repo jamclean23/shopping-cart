@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"; 
 import Homepage from "./components/Homepage/Homepage";
 import Cart from "./components/Cart/Cart";
+import Products from "./components/Products/Products.js";
  
 function RouteSwitch (props) {
 
@@ -24,7 +25,8 @@ function RouteSwitch (props) {
         <BrowserRouter>
             <Routes>
                 <Route path={props.prefix} element={<Homepage prefix={props.prefix} handleTestClick={handleTestClick}/>} />
-                <Route path={props.prefix + 'Cart'} element={<Cart prefix={props.prefix} handleTestClick={handleTestClick}/>} />
+                <Route path={props.prefix + '/Cart'} element={<Cart prefix={props.prefix} handleTestClick={handleTestClick}/>} />
+                <Route path={props.prefix + '/products/:productId'} element={<Products prefix={props.prefix}/>} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,0 +1,42 @@
+.productTitle {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.productImage {
+    width: 90%;
+    height: 50vh;
+    object-fit: contain;
+    display: block;
+    margin-inline: auto;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+}
+
+.addToCartButton {
+    height: 1.5rem;
+    padding-inline: .5rem;
+}
+
+.quantityLabel {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.quantityInput {
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.productDescription {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-inline: 20vw;
+    white-space: pre-wrap;
+}

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import accesskey from '../../../accesskey.js';
 import Card from './Card/Card';
 import uniqid from 'uniqid';
+import getPrintifyObject from '../../../functions/getPrintifyObject/getPrintifyObject';
 
 function Homepage (props) {
     const mountCounter = useRef(0);
@@ -30,7 +31,7 @@ function Homepage (props) {
         // Make a new card for each item in printify object
         let cardsArray = [];
         printifyObject.data.forEach((item) => {
-            cardsArray.push(<Card key={uniqid()} mainImage={item.images[0].src}/>);
+            cardsArray.push(<Card key={uniqid()} prefix={props.prefix} productId={item.id} cardTitle={item.title} cardDescription={item.description} mainImage={item.images[0].src}/>);
         });
 
         setCards(cardsArray);
@@ -38,26 +39,12 @@ function Homepage (props) {
         console.log(printifyObject);
     }
 
-    async function getPrintifyObject (accesskey) {
-        let response = await fetch('http://8.40.62.125:49000/', {
-            method: "GET",
-            mode: "cors",
-            headers: {
-                Authorization: 'Bearer ' + accesskey
-            }
-        });
-        const content = await response.json();
-
-        return content;
-    }
-
     return (
         <div className='Homepage'>
             <header>
-                <h1>Home</h1>
-                <Link className='Link' to={props.prefix + 'Cart'}>Cart</Link>
+                <h1>My Cool Shop!</h1>
+                <Link className='Link' to={props.prefix + '/Cart'}>Cart</Link>
             </header>
-            <button onClick={props.handleTestClick}>Test</button>
             <div className='itemsContainer'>{cards}</div>
         </div>
     );

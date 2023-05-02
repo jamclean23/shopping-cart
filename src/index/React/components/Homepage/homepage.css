@@ -6,6 +6,7 @@ header {
     align-items: center;
     position: relative;
     height: calc(var(--doc-height) * .08);
+    font-size: 70%;
 }
 
 header > .Link {
@@ -18,7 +19,10 @@ header > .Link {
 
 .itemsContainer {
     display: grid;
-    grid-auto-rows: 30vh;
-    grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
-    justify-content: space-around;
+    grid-auto-rows: 50vh;
+    grid-template-columns: repeat(auto-fit, minmax(35vh, 1fr));
+    justify-items: center;
+    row-gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
