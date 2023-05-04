@@ -35,8 +35,6 @@ function Homepage (props) {
         });
 
         setCards(cardsArray);
-
-        console.log(printifyObject);
     }
 
     return (

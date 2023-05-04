@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import getPrintifyObject from "../../../functions/getPrintifyObject/getPrintifyObject";
 import parseCardDescription from "../../../functions/parseCardDescription/parseCardDescription";
 
+
 function Products (props) {
     const mountCounter = useRef(0);
     const { productId } = useParams();
@@ -19,10 +20,6 @@ function Products (props) {
         mountCounter.current = mountCounter.current + 1;
     }, []);
 
-    useEffect(() => {
-        console.log(productData);
-    }, [productData]);
-
     async function getProductData (productId) {
         const printifyObject = await getPrintifyObject();
         let itemObject = printifyObject.data.filter((item) => {
@@ -37,16 +34,21 @@ function Products (props) {
         setQuantity(event.target.value);
     }
 
+    function addToCartLambda (item, quantity) {
+        props.addToCart(item, quantity);
+        setQuantity(1);
+    }
+
     return (
         <div>
             <header>
-                <h1>My Cool Shop!</h1>
+                <h1 onClick={props.handleHeroClick}>My Cool Shop!</h1>
                 <Link className='Link' to={props.prefix + '/Cart'}>Cart</Link>
             </header>
             <h2 className="productTitle">{productData.title}</h2>
             <img className="productImage" src={productData ? productData.images[0].src : ''}/>
             <div className="buttonWrapper">
-                <button className="addToCartButton">Add to Cart</button>
+                <button className="addToCartButton" onClick={addToCartLambda.bind(this, productData, quantity)}>Add to Cart</button>
                 <label className="quantityLabel">Quantity: </label>
                 <input className="quantityInput" type="number" value={quantity} onChange={handleQuantityChange}/>
             </div>

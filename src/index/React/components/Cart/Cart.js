@@ -11,7 +11,8 @@ function Cart (props) {
     return (
         <div className='Cart'>
             <header>
-                <h1>My Cool Shop!</h1>
+                <h1 onClick={props.handleHeroClick}>My Cool Shop!</h1>
+                <Link className='Link' to={props.prefix + '/Cart'}>Cart</Link>
             </header>
         </div>
     );
