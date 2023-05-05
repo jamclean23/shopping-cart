@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; 
+import { BrowserRouter, Routes, Route} from "react-router-dom"; 
 import Homepage from "./components/Homepage/Homepage";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/Products/Products.js";
@@ -10,7 +10,7 @@ function RouteSwitch (props) {
     const [testInt, setTestInt] = useState(0);
     const testIntCounter = useRef(0);
     const [cart, setCart] = useState([]);
-    
+
     useEffect(() => {
         if (testIntCounter.current > 1) {
             console.log(testInt);
@@ -61,8 +61,8 @@ function RouteSwitch (props) {
         }
     }
 
-    function handleHeroClick () {
-        window.location.href = props.prefix;
+    function handleHeroClick (navigate) {
+        navigate(props.prefix);
     }
     
     function handleTestClick () {

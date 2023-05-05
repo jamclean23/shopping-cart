@@ -40,7 +40,7 @@ function Homepage (props) {
     return (
         <div className='Homepage'>
             <header>
-                <h1>My Cool Shop!</h1>
+                <h1> My Cool Shop!</h1>
                 <Link className='Link' to={props.prefix + '/Cart'}>Cart</Link>
             </header>
             <div className='itemsContainer'>{cards}</div>

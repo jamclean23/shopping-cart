@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import './products.css';
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import getPrintifyObject from "../../../functions/getPrintifyObject/getPrintifyObject";
 import parseCardDescription from "../../../functions/parseCardDescription/parseCardDescription";
 
@@ -10,6 +10,7 @@ function Products (props) {
     const { productId } = useParams();
     const [productData, setProductData] = useState(false);
     const [quantity, setQuantity] = useState(1);
+    const navigate = useNavigate();
 
     // On Mount
     useEffect (() => {
@@ -42,7 +43,7 @@ function Products (props) {
     return (
         <div>
             <header>
-                <h1 onClick={props.handleHeroClick}>My Cool Shop!</h1>
+                <h1 onClick={props.handleHeroClick.bind(this, navigate)}>My Cool Shop!</h1>
                 <Link className='Link' to={props.prefix + '/Cart'}>Cart</Link>
             </header>
             <h2 className="productTitle">{productData.title}</h2>
