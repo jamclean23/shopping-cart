@@ -1,0 +1,14 @@
+.cartItem {
+    box-shadow: 0 0 6px 0 rgb(110, 110, 110);
+    border-radius: 4px;
+    width: 60%;
+    min-height: 15rem;
+}
+
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
