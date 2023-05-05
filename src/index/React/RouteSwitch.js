@@ -19,7 +19,7 @@ function RouteSwitch (props) {
     }, [testInt]);
     
     useEffect(() => {
-        if (cart.length) {
+        if (cart && cart.length) {
             console.log('CART');
             console.log(cart);
         }
@@ -73,7 +73,7 @@ function RouteSwitch (props) {
         <BrowserRouter>
             <Routes>
                 <Route path={props.prefix} element={<Homepage prefix={props.prefix} handleHeroClick={handleHeroClick} handleTestClick={handleTestClick}/>} />
-                <Route path={props.prefix + '/Cart'} element={<Cart cart={cart} prefix={props.prefix} handleHeroClick={handleHeroClick} handleTestClick={handleTestClick}/>} />
+                <Route path={props.prefix + '/Cart'} element={<Cart cart={cart} setCart={setCart} prefix={props.prefix} handleHeroClick={handleHeroClick} handleTestClick={handleTestClick}/>} />
                 <Route path={props.prefix + '/products/:productId'} element={<Products addToCart={addToCart} handleHeroClick={handleHeroClick} prefix={props.prefix}/>} />
             </Routes>
         </BrowserRouter>
