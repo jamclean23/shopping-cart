@@ -48,7 +48,7 @@ function setPrefix (environment) {
         if (environment === 'local') {
             return '/dist/index.html';     
         } else if (environment === 'gh-pages') {
-            return '/shopping-cart/';
+            return '/shopping-cart';
         } else {
             return '/';
         }
